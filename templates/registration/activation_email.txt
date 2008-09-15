@@ -1,0 +1,10 @@
+{% load humanize %}
+
+Alguien, ojalá seas tú, se ha registrado en {{ site.domain }} usando esta
+dirección de correo electrónico.  Si fuiste tú y si deseas activar y usar tu 
+cuenta, haz un clic en el siguiente enlace:
+
+  http://{{ site.domain }}/accounts/activate/{{ activation_key }}/
+
+Si tú no te registraste, no necesitsa hacer nada; no recibirás más mensajes de
+nosotros y la cuenta expirará automáticamente en {{ expiration_days|apnumber }} días.

@@ -1,0 +1,66 @@
+{% extends "registration/base.html" %}
+
+{% block title %}Registrarse | {{ block.super }}{% endblock %}
+
+{% block main-content %}
+<h2>Registrarse</h2>
+
+<form action="." method="POST">
+    <table>
+        <tr>
+            <th><label for="id_username">Nombre de usuario</label></th>
+            <td>
+            {% if form.username.errors %}
+            <div class="error">
+                {{ form.username.errors }}
+                {{ form.username }}
+            </div>
+            {% else %}
+                {{ form.username }}
+            {% endif %}
+            </td>
+        </tr>
+        <tr>
+            <th><label for="id_email">Dirección de correo electrónico</label></th>
+            <td>
+            {% if form.email.errors %}
+            <div class="error">
+                {{ form.email.errors }}
+                {{ form.email }}
+            </div>
+            {% else %}
+                {{ form.email }}
+            {% endif %}
+            </td>
+        </tr>
+        <tr>
+            <th><label for="id_password1">Contraseña</label></th>
+            <td>
+            {% if form.password1.errors %}
+            <div class="error">
+                {{ form.password1.errors }}
+                {{ form.password1 }}
+            </div>
+            {% else %}
+                {{ form.password1 }}
+            {% endif %}
+            </td>
+        </tr>
+        <tr>
+            <th><label for="id_password2">Contraseña (otra vez)</label></th>
+            <td>
+            {% if form.password2.errors %}
+            <div class="error">
+                {{ form.password2.errors }}
+                {{ form.password2 }}
+            </div>
+            {% else %}
+                {{ form.password2 }}
+            {% endif %}
+            </td>
+        </tr>
+    </table>
+    
+    <p> <input type="submit" value="registrarse"> </p>
+</form>
+{% endblock %}

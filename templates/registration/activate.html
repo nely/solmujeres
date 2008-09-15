@@ -1,0 +1,18 @@
+{% extends "registration/base.html" %}
+
+{% block title %}Cuenta activada | {{ block.super }}{% endblock %}
+
+{% block main-content %}
+    {% load humanize %}
+<h2>Cuenta activada</h2>
+
+    {% if account %}
+<p>
+Gracias por registrarte! Ahora puedes proceder a <a href="/accounts/login/">identificarte</a>
+</p>
+    {% else %}
+<p>
+Lo sentimos pero algo no ha funcionado.  O tu enlace de activación no es correcto, o el enlace de activación para tu cuenta ha expirado; los enlaces de activación son válidos por {{ expiration_days|apnumber }} días después del registro.
+</p>
+    {% endif %}
+{% endblock %}
