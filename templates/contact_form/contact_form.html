@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block title %}Contacto | {{ block.super }}{% endblock %}
+
+{% block breadcrumb %}
+<ul>
+    <li class="first"><a href="/">Inicio</a>
+        <ul>
+            <li>Contacto
+            </li>
+        </ul>
+    </li>
+</ul>
+{% endblock %}
+
+{% block body %}
+<div class="span-15 prepend-2 append-7 last">
+<h2>Contacto</h2>
+
+<p>
+<form action="." method="POST">
+    <table>
+        <tr>
+            <th><label for="id_name">Tu nombre</label></th>
+            <td>
+            {% if form.name.errors %}
+            <div class="error">
+                {{ form.name.errors }}
+                {{ form.name }}
+            </div>
+            {% else %}
+                {{ form.name }}
+            {% endif %}
+            </td>
+        </tr>
+        <tr>
+            <th><label for="id_name">Tu correo electrónico</label></th>
+            <td>
+            {% if form.email.errors %}
+            <div class="error">
+                {{ form.name.errors }}
+                {{ form.email }}
+            </div>
+            {% else %}
+                {{ form.email }}
+            {% endif %}
+        </tr>
+        <tr>
+            <th><label for="id_body">Tu mensaje</label></th>
+            <td>
+            {% if form.body.errors %}
+            <div class="error">
+                {{ form.body.errors }}
+                {{ form.body }}
+            </div>
+            {% else %}
+                {{ form.body }}
+            {% endif %}
+            </td>
+        </tr>
+    </table>
+
+    <p> <input type="submit" value="enviar el mensaje"> </p>
+</form>
+</div>
+{% endblock %}
