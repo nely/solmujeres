@@ -56,4 +56,6 @@ INSTALLED_APPS = (
     'django.contrib.flatpages',
     'django.contrib.markup',
     'django.contrib.syndication',
+    'contact_form',
+    'registration',
 )
