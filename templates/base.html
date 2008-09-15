@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <title>{% block title %}Solmujeres{% endblock %}</title>
+    <link rel="stylesheet" href="/blueprint/screen.css" type="text/css" media="screen, projection">
+    <link rel="stylesheet" href="/blueprint/print.css" type="text/css" media="print"> 
+    <!--[if IE]><link rel="stylesheet" href="/blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
+    {% block extra-head %}{% endblock %}
+</head>
+
+<body>
+
+<div class="container">
+    <div id="header" class="span-24">
+        <h1><a href="/" title="Solmujeres"><img src="/images/logo.png" alt="Solmujeres"></a></h1>
+    </div>
+    
+    <div id="breadcrumb" class="span-17 prepend-2 append-5 last bottom">
+        {% block breadcrumb %}{% endblock %}
+    </div>
+
+    {% block body %}
+    <div id="content" class="span-24">
+        {% block content %}{% endblock %}
+    </div>
+    {% endblock %}
+
+    <div id="footer" class="span-24 small">
+        Copyright &copy; 2008 Solmujeres.
+    </div>
+</div>
+
+</body>
+
+</html>
